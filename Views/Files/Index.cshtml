@@ -1,0 +1,18 @@
+﻿@model string[]
+@{
+    ViewData["Title"] = "Files";
+    string[] files = ViewData["files"] as string[];
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="color: tomato;">File Names:</h1>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a asp-controller="Files" 
+                asp-action="Content" 
+                asp-route-id="@item">@item</a></li>
+        }
+    </ul>
+</div>
